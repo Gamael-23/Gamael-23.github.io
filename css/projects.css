@@ -1,0 +1,256 @@
+/* ============================================
+   PROJECTS — GAMAEL APOLLON
+   ============================================ */
+
+#projects {
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+}
+
+/* ── En-tête ── */
+.projects-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.projects-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-top: 0.75rem;
+}
+
+.projects-note {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  font-style: italic;
+  max-width: 220px;
+  text-align: right;
+  line-height: 1.6;
+}
+
+/* ── Grille ── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+/* ── Card de base ── */
+.project-card {
+  background: var(--bg-card);
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: background var(--duration-base);
+}
+
+.project-card:hover { background: var(--bg); }
+
+/* Ligne bleue top au hover */
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-slow) var(--ease);
+}
+
+.project-card:hover::before { transform: scaleX(1); }
+
+/* ── Featured — pleine largeur ── */
+.project-card--featured {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  padding: 0;
+}
+
+.project-card--featured .project-meta {
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.project-card--featured .project-visual {
+  border-left: 1px solid var(--border);
+  background: var(--bg-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+  position: relative;
+  overflow: hidden;
+  transition: background var(--duration-base);
+}
+
+.project-card--featured:hover .project-visual {
+  background: var(--bg-2);
+}
+
+.project-visual-label {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: var(--border-hover);
+  user-select: none;
+  transition: color var(--duration-slow);
+}
+
+.project-card--featured:hover .project-visual-label {
+  color: var(--accent-light);
+}
+
+.project-visual-line {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-slow) var(--ease);
+}
+
+.project-card--featured:hover .project-visual-line {
+  transform: scaleX(1);
+}
+
+/* ── Numéro ── */
+.project-num {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* ── Tags ── */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.project-tag {
+  font-size: 0.62rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent-light);
+  background: var(--accent-dim);
+  padding: 0.18rem 0.55rem;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Titre projet ── */
+.project-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+/* ── Description ── */
+.project-desc {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  line-height: 1.75;
+  flex: 1;
+}
+
+/* ── Ce que j'ai appris ── */
+.project-learned {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  border-left: 2px solid var(--accent-light);
+  padding-left: 0.75rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.project-learned strong {
+  color: var(--accent);
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* ── Footer card ── */
+.project-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.project-link {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color var(--duration-base);
+}
+
+.project-link:hover { color: var(--accent); }
+
+.project-arrow {
+  font-size: 1rem;
+  color: var(--text-faint);
+  transition: transform var(--duration-base) var(--ease-spring), color var(--duration-base);
+}
+
+.project-card:hover .project-arrow {
+  transform: translate(3px, -3px);
+  color: var(--accent);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .projects-grid { grid-template-columns: 1fr; }
+
+  .project-card--featured {
+    grid-column: span 1;
+    grid-template-columns: 1fr;
+  }
+
+  .project-card--featured .project-visual {
+    border-left: none;
+    border-top: 1px solid var(--border);
+    min-height: 140px;
+  }
+
+  .projects-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .projects-note { text-align: left; max-width: 100%; }
+}

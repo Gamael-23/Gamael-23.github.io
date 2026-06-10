@@ -1,0 +1,113 @@
+/* ============================================
+   TYPOGRAPHIE PREMIUM — GAMAEL APOLLON
+   ============================================ */
+
+body {
+  font-size: 16px;
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  text-rendering: optimizeLegibility;
+}
+
+.hero-title {
+  font-size: clamp(2.2rem, 5.5vw, 5.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  word-spacing: -0.02em;
+}
+
+.hero-tagline {
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+  max-width: 420px;
+}
+
+.about-title,
+.contact-title {
+  font-size: clamp(1.9rem, 3.8vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+
+.skills-title,
+.projects-title,
+.learning-title {
+  font-size: clamp(1.75rem, 3.2vw, 2.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.028em;
+}
+
+.label {
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  font-weight: 500;
+}
+
+.about-body p {
+  font-size: 1rem;
+  line-height: 1.85;
+  letter-spacing: 0.01em;
+  max-width: 58ch;
+}
+
+.project-desc,
+.learning-card-desc,
+.exp-desc,
+.contact-desc {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+.project-title {
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.learning-card-title {
+  font-size: 1.05rem;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+}
+
+.stat-number {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  line-height: 1.4;
+}
+
+.exp-role,
+.project-tag,
+.avail-tag,
+.resource-tag,
+.tool-tag {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 768px) {
+  body { font-size: 15px; }
+  .about-body p { max-width: 100%; }
+  .stat-number { font-size: 1.85rem; }
+}
+
+[data-theme="dark"] body {
+  letter-spacing: 0.015em;
+}
+
+[data-theme="dark"] .about-body p,
+[data-theme="dark"] .project-desc,
+[data-theme="dark"] .learning-card-desc {
+  line-height: 1.9;
+}

@@ -1,0 +1,265 @@
+/* ============================================
+   HERO — GAMAEL APOLLON
+   ============================================ */
+
+#hero {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-top: 64px;
+  padding-bottom: 4.5rem;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* ── Image de fond ── */
+.hero-bg {
+  position: absolute;
+  inset: -20%;
+  z-index: 0;
+  background-image: url('assets/images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  will-change: transform;
+  transition: transform 0s linear;
+}
+
+/* Overlay */
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.92) 0%,
+    rgba(255,255,255,0.75) 50%,
+    rgba(255,255,255,0.60) 100%
+  );
+}
+
+/* Fallback sans image */
+.hero-bg:not([style*="hero-bg.jpg"]) {
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* ── Orbe ── */
+.hero-orb {
+  position: absolute;
+  z-index: 0;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-light) 0%, transparent 70%);
+  top: 5%;
+  right: -8%;
+  animation: float 9s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ── Contenu — avec container intégré ── */
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--section-pad-h);
+  will-change: transform;
+}
+
+/* ── Badge ── */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  background: var(--bg-2);
+  padding: 0.4rem 1rem;
+  border-radius: 99px;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.3s var(--ease-out) forwards;
+}
+
+.hero-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22C55E;
+  animation: pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+/* ── Titre ── */
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 5.5vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.hero-title-line {
+  display: block;
+  overflow: hidden;
+}
+
+.hero-title-line span {
+  display: block;
+  transform: translateY(110%);
+  animation: slideUpLetter 0.9s var(--ease-out) forwards;
+}
+
+.hero-title-line:nth-child(1) span { animation-delay: 0.45s; }
+.hero-title-line:nth-child(2) span { animation-delay: 0.6s; }
+.hero-title-line:nth-child(3) span {
+  animation-delay: 0.75s;
+  color: var(--accent);
+}
+
+/* ── Séparateur ── */
+.hero-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+  margin-block: 2rem;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: scaleXIn 0.9s 1.1s var(--ease-out) forwards;
+}
+
+/* ── Bas du hero ── */
+.hero-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  opacity: 0;
+  animation: fadeUp 0.7s 1.25s var(--ease-out) forwards;
+}
+
+.hero-tagline {
+  font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+  color: var(--text-muted);
+  max-width: 400px;
+  line-height: 1.7;
+}
+
+.hero-tagline strong {
+  color: var(--text);
+  font-weight: 400;
+}
+
+/* ── Boutons ── */
+.hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #fff;
+  background: var(--accent);
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius-sm);
+  transition: background var(--duration-base), transform var(--duration-fast);
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2px;
+  transition: color var(--duration-base), border-color var(--duration-base);
+}
+
+.btn-secondary:hover {
+  color: var(--text);
+  border-color: var(--text-muted);
+}
+
+/* ── Scroll indicator ── */
+.hero-scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeIn 0.7s 1.7s var(--ease-out) forwards;
+  transition: opacity 0.4s ease;
+}
+
+.hero-scroll-line {
+  width: 1px;
+  height: 44px;
+  background: var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-scroll-line::after {
+  content: '';
+  position: absolute;
+  top: -100%; left: 0;
+  width: 100%; height: 100%;
+  background: var(--accent);
+  animation: scanline 1.9s ease-in-out infinite;
+}
+
+.hero-scroll-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  writing-mode: vertical-rl;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  #hero { padding-bottom: 3.5rem; }
+
+  .hero-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-orb    { display: none; }
+  .hero-scroll { display: none; }
+}

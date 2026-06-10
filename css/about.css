@@ -1,0 +1,219 @@
+/* ============================================
+   ABOUT — GAMAEL APOLLON
+   ============================================ */
+
+#about {
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+}
+
+/* ── Layout ── */
+.about-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* ── Colonne texte ── */
+.about-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.about-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.about-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.about-body p {
+  font-size: 0.975rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+}
+
+.about-body p strong {
+  color: var(--text);
+  font-weight: 400;
+}
+
+/* ── Stats ── */
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 2rem;
+  background: var(--bg-card);
+}
+
+.stat-item {
+  padding: 1.25rem 1rem;
+  border-right: 1px solid var(--border);
+  transition: background var(--duration-base);
+}
+
+.stat-item:last-child { border-right: none; }
+.stat-item:hover { background: var(--bg-2); }
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.stat-number span { color: var(--accent); }
+
+.stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ── Localisation ── */
+.about-location {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.about-location-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22C55E;
+  animation: pulse 2.5s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+/* ── Colonne visuelle ── */
+.about-visual-col {
+  position: relative;
+}
+
+.about-photo-wrap {
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  position: relative;
+}
+
+.about-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* Placeholder initiales */
+.about-photo-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 6rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: var(--border-hover);
+  user-select: none;
+}
+
+/* Ligne déco bas de photo */
+.about-photo-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+/* Card flottante université */
+.about-card {
+  position: absolute;
+  bottom: -1.25rem;
+  left: -1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1.1rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  max-width: 210px;
+}
+
+.about-card-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 0.4rem;
+}
+
+.about-card-value {
+  font-size: var(--text-sm);
+  color: var(--text);
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.about-card-value span {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--accent);
+  margin-top: 0.25rem;
+  letter-spacing: 0.06em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-visual-col {
+    order: -1;
+    max-width: 340px;
+  }
+
+  .about-card {
+    bottom: -1rem;
+    left: -0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-stats { grid-template-columns: 1fr; }
+  .stat-item {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .stat-item:last-child { border-bottom: none; }
+}

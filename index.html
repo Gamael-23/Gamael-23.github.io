@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gamael Apollon — Étudiant en Sciences Informatiques, Port-au-Prince. Développement web, C++, Java. Disponible pour stage et opportunités.">
+  <meta name="author" content="Gamael Apollon">
+  <meta property="og:title"       content="Gamael Apollon — Étudiant en Informatique">
+  <meta property="og:description" content="J'ai parié sur le code pour avoir une chance. Étudiant en 2ème année, Port-au-Prince, Haïti.">
+  <meta property="og:type"        content="website">
+  <meta name="theme-color"        content="#FFFFFF">
+
+  <title>Gamael Apollon — Étudiant en Informatique</title>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/loader.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/skills.css">
+  <link rel="stylesheet" href="css/projects.css">
+  <link rel="stylesheet" href="css/github.css">
+  <link rel="stylesheet" href="css/learning.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/microanimations.css">
+  <link rel="stylesheet" href="css/typography.css">
+
+</head>
+<body>
+
+  <!-- 00 — LOADER -->
+  <div id="loader" role="status" aria-label="Chargement">
+    <div class="loader-initials" aria-hidden="true">
+      <span>Bienvenue</span>
+      <span>sur mon</span>
+      <span>portfolio</span>
+    </div>
+    <div class="loader-bar-wrap" aria-hidden="true">
+      <div class="loader-bar"></div>
+    </div>
+    <span class="loader-count" aria-hidden="true">0%</span>
+  </div>
+
+  <!-- 01 — NAV -->
+  <header id="site-header" role="banner">
+    <nav class="nav container" aria-label="Navigation principale">
+      <a href="#hero" class="nav-logo" aria-label="Gamael Apollon">
+        G<span class="accent">.</span>A
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#about"    class="nav-link">À propos</a></li>
+        <li><a href="#skills"   class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projets</a></li>
+        <li><a href="#learning" class="nav-link">En cours</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Passer en mode sombre">
+          <span class="theme-toggle-icon">☀</span>
+        </button>
+        <a href="#contact" class="nav-cta">Me contacter</a>
+        <button class="nav-burger" id="nav-burger"
+                aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
+      <ul role="list">
+        <li><a href="#about"    class="mobile-link">À propos</a></li>
+        <li><a href="#skills"   class="mobile-link">Skills</a></li>
+        <li><a href="#projects" class="mobile-link">Projets</a></li>
+        <li><a href="#learning" class="mobile-link">En cours</a></li>
+        <li><a href="#contact"  class="mobile-link">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main" role="main">
+
+    <!-- 02 — HERO -->
+    <section id="hero" aria-labelledby="hero-title">
+
+      <div class="hero-bg" aria-hidden="true"
+           style="background-image: url('assets/images/hero-bg.jpg')"></div>
+      <div class="hero-orb" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+
+        <div class="hero-badge" aria-label="Disponible pour stage et opportunités">
+          <span class="hero-badge-dot" aria-hidden="true"></span>
+          <span class="hero-badge-text"
+                data-text="Disponible — Stage · Freelance · Emploi">
+            Disponible — Stage · Freelance · Emploi
+          </span>
+        </div>
+
+        <h1 class="hero-title" id="hero-title">
+          <span class="hero-title-line"><span>J'ai parié</span></span>
+          <span class="hero-title-line"><span>sur le code</span></span>
+          <span class="hero-title-line"><span>pour avoir une chance.</span></span>
+        </h1>
+
+        <div class="hero-divider" aria-hidden="true"></div>
+
+        <div class="hero-bottom">
+          <p class="hero-tagline">
+            Étudiant en <strong>2ème année · Sciences Informatiques</strong>
+            à Port-au-Prince, Haïti 🇭🇹 —
+            je construis des projets réels pour apprendre vite
+            et trouver ma première opportunité professionnelle.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn-primary">Voir mes projets →</a>
+            <a href="#contact"  class="btn-secondary">Me contacter</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <div class="hero-scroll-line"></div>
+        <span class="hero-scroll-label">scroll</span>
+      </div>
+
+    </section>
+
+    <!-- 03 — ABOUT -->
+    <section id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about-inner">
+
+          <div class="about-text-col">
+            <span class="label reveal">À propos</span>
+            <h2 class="about-title reveal reveal-delay-1" id="about-title">
+              Je construis<br>ce pari <em>chaque jour.</em>
+            </h2>
+            <div class="about-body reveal reveal-delay-2">
+              <p>
+                Je m'appelle <strong>Gamael Apollon</strong>, étudiant en 2ème année
+                de Sciences Informatiques à l'Université de Saint François d'Assise
+                d'Haïti. Je ne suis pas un développeur senior — je suis quelqu'un
+                qui apprend vite, qui construit des choses réelles, et qui prend
+                son parcours au sérieux.
+              </p>
+              <p>
+                J'ai choisi ce domaine après une longue réflexion sur ce qui était
+                possible dans mon pays. Médecine, droit, génie civil — j'ai analysé
+                chaque option. L'informatique m'a semblé la seule qui pouvait me
+                <strong>connecter au monde entier depuis Port-au-Prince.</strong>
+                C'est un pari lucide, pas une passion de façade.
+              </p>
+              <p>
+                Aujourd'hui je cherche une première opportunité — stage, freelance,
+                petit emploi — qui me permettra de continuer mes études tout en
+                mettant mes compétences à l'épreuve du réel.
+              </p>
+            </div>
+
+            <div class="about-stats reveal reveal-delay-3">
+              <div class="stat-item">
+                <div class="stat-number"
+                     data-target="1.5" data-suffix="½" data-float="true">
+                  1<span>½</span>
+                </div>
+                <div class="stat-label">An d'apprentissage</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" data-target="4" data-suffix="+">
+                  4<span>+</span>
+                </div>
+                <div class="stat-label">Projets réalisés</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" data-target="2" data-suffix="è">
+                  2<span>è</span>
+                </div>
+                <div class="stat-label">Année universitaire</div>
+              </div>
+            </div>
+
+            <div class="about-location reveal reveal-delay-4">
+              <span class="about-location-dot" aria-hidden="true"></span>
+              Port-au-Prince, Haïti 🇭🇹 — disponible remote
+            </div>
+          </div>
+
+          <div class="about-visual-col reveal reveal-delay-2">
+            <div class="about-photo-wrap">
+              <!--
+                Remplace le placeholder par ta vraie photo :
+                <img src="assets/images/gamael.jpg" alt="Gamael Apollon">
+              -->
+              <div class="about-photo-placeholder" aria-hidden="true">GA</div>
+            </div>
+            <div class="about-card" aria-hidden="true">
+              <p class="about-card-label">Formation</p>
+              <p class="about-card-value">
+                Université de Saint François d'Assise d'Haïti
+                <span>Sciences Informatiques · 2ème année</span>
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 — SKILLS -->
+    <section id="skills" aria-labelledby="skills-title">
+      <div class="container">
+
+        <div class="skills-header reveal">
+          <div>
+            <span class="label">Compétences</span>
+            <h2 class="skills-title" id="skills-title">Ce que je sais faire</h2>
+          </div>
+          <p class="skills-subtitle">
+            Honnête sur mon niveau —<br>ambitieux sur ma progression.
+          </p>
+        </div>
+
+        <div class="skills-grid reveal reveal-delay-1">
+
+          <div class="skills-col">
+            <span class="skills-col-icon" aria-hidden="true">{ }</span>
+            <p class="skills-col-name">Langages</p>
+            <ul class="skill-list">
+              <li class="skill-item">
+                <div class="skill-left"><span class="skill-dot"></span><span class="skill-name">HTML & CSS</span></div>
+                <span class="skill-badge badge-solid">À l'aise</span>
+              </li>
+              <li class="skill-item">
+                <div class="skill-left"><span class="skill-dot"></span><span class="skill-name">C</span></div>
+                <span class="skill-badge badge-solid">À l'aise</span>
+              </li>
+              <li class="skill-item">
+                <div class="skill-left"><span class="skill-dot"></span><span class="skill-name">C++</span></div>
+                <span class="skill-badge badge-solid">À l'aise</span>
+              </li>
+              <li class="skill-item">
+                <div class="skill-left"><span class="skill-dot"></span><span class="skill-name">Java</span></div>
+                <span class="skill-badge badge-learning">En cours</span>
+              </li>
+              <li class="skill-item">
+                <div class="skill-left"><span class="skill-dot"></span><span class="skill-name">JavaScript</span></div>
+                <span class="skill-badge badge-notion">Notions</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="skills-col">
+            <span class="skills-col-icon" aria-hidden="true">⬡</span>
+            <p class="skills-col-name">Frameworks & Libs</p>
+            <ul class="skill-list">
+              <li class="skill-item">
+                <div class="skill-left"><span class="skill-dot"></span><span class="skill-name">Qt Creator (C++)</span></div>
+                <span class="skill-badge badge-solid">À l'aise</span>
+              </li>
+              <li class="skill-item">
+                <div class="skill-left"><span class="skill-dot"></span><span class="skill-name">CSS Flexbox / Grid</span></div>
+                <span class="skill-badge badge-solid">À l'aise</span>
+              </li>
+              <li class="skill-item">
+                <div class="skill-left"><span class="skill-dot"></span><span class="skill-name">React</span></div>
+                <span class="skill-badge badge-learning">En cours</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="skills-col">
+            <span class="skills-col-icon" aria-hidden="true">◎</span>
+            <p class="skills-col-name">Concepts & Méthodes</p>
+            <ul class="skill-list">
+              <li class="skill-item">
+                <div class="skill-left"><span class="skill-dot"></span><span class="skill-name">Programmation orientée objet</span></div>
+                <span class="skill-badge badge-solid">À l'aise</span>
+              </li>
+              <li class="skill-item">
+                <div class="skill-left"><span class="skill-dot"></span><span class="skill-name">Algorithmes & structures</span></div>
+                <span class="skill-badge badge-solid">À l'aise</span>
+              </li>
+              <li class="skill-item">
+                <div class="skill-left"><span class="skill-dot"></span><span class="skill-name">Conception UI (HTML/CSS)</span></div>
+                <span class="skill-badge badge-solid">À l'aise</span>
+              </li>
+              <li class="skill-item">
+                <div class="skill-left"><span class="skill-dot"></span><span class="skill-name">Versioning Git</span></div>
+                <span class="skill-badge badge-solid">À l'aise</span>
+              </li>
+              <li class="skill-item">
+                <div class="skill-left"><span class="skill-dot"></span><span class="skill-name">Base de données SQL</span></div>
+                <span class="skill-badge badge-notion">Notions</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="skills-tools reveal reveal-delay-2">
+          <p class="skills-tools-label">Environnements & Outils</p>
+          <div class="skills-tools-list">
+            <span class="tool-tag">VS Code</span>
+            <span class="tool-tag">IntelliJ IDEA</span>
+            <span class="tool-tag">Dev C++</span>
+            <span class="tool-tag">Qt Creator</span>
+            <span class="tool-tag">Git</span>
+            <span class="tool-tag">GitHub</span>
+            <span class="tool-tag">Windows</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 05 — PROJETS -->
+    <section id="projects" aria-labelledby="projects-title">
+      <div class="container">
+
+        <div class="projects-header reveal">
+          <div>
+            <span class="label">Projets</span>
+            <h2 class="projects-title" id="projects-title">Ce que j'ai construit</h2>
+          </div>
+          <p class="projects-note">Projets académiques et personnels — vrais et assumés.</p>
+        </div>
+
+        <div class="projects-grid reveal reveal-delay-1">
+
+          <article class="project-card project-card--featured">
+            <div class="project-meta">
+              <span class="project-num">01 — Projet phare</span>
+              <div class="project-tags">
+                <span class="project-tag">C++</span>
+                <span class="project-tag">Qt Creator</span>
+                <span class="project-tag">POO</span>
+                <span class="project-tag">Académique</span>
+              </div>
+              <h3 class="project-title">Application de Gestion Pharmacie & Marché</h3>
+              <p class="project-desc">
+                Logiciel desktop complet de gestion pour une pharmacie et un marché.
+                Fonctionnalités : gestion de stock, fournisseurs, paiements,
+                ordonnances, patients, barre de recherche, alertes produits
+                périmés et stocks vides.
+              </p>
+              <p class="project-learned">
+                <strong>Ce que j'ai appris :</strong> programmation orientée objet
+                appliquée à un vrai problème métier, conception d'interfaces
+                desktop avec Qt, gestion de données complexes en C++.
+              </p>
+              <div class="project-footer">
+                <div class="project-links">
+                  <a href="https://github.com/gamaelapollon" class="project-link"
+                     target="_blank" rel="noopener">⌥ GitHub</a>
+                </div>
+                <span class="project-arrow" aria-hidden="true">↗</span>
+              </div>
+            </div>
+            <div class="project-visual" aria-hidden="true">
+              <span class="project-visual-label">C++</span>
+              <div class="project-visual-line"></div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <span class="project-num">02</span>
+            <div class="project-tags">
+              <span class="project-tag">HTML</span>
+              <span class="project-tag">CSS</span>
+              <span class="project-tag">Académique</span>
+            </div>
+            <h3 class="project-title">Site Vitrine — Studio Yoga</h3>
+            <p class="project-desc">
+              Site statique multi-pages pour un studio de yoga.
+              Présentation des cours, horaires, instructeurs et formulaire de
+              contact. Design responsive et soigné.
+            </p>
+            <p class="project-learned">
+              <strong>Ce que j'ai appris :</strong> mise en page CSS avancée,
+              responsive design, organisation d'un projet web multi-pages.
+            </p>
+            <div class="project-footer">
+              <div class="project-links">
+                <a href="https://github.com/gamaelapollon" class="project-link"
+                   target="_blank" rel="noopener">⌥ GitHub</a>
+              </div>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <span class="project-num">03</span>
+            <div class="project-tags">
+              <span class="project-tag">HTML</span>
+              <span class="project-tag">CSS</span>
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">Académique</span>
+            </div>
+            <h3 class="project-title">Dashboard UI</h3>
+            <p class="project-desc">
+              Interface d'administration avec navigation latérale,
+              tableaux de données, graphiques et cartes de statistiques.
+              Exercice de mise en page complexe et d'interactions JS.
+            </p>
+            <p class="project-learned">
+              <strong>Ce que j'ai appris :</strong> CSS Grid et Flexbox avancés,
+              premières interactions JavaScript, organisation d'une interface admin.
+            </p>
+            <div class="project-footer">
+              <div class="project-links">
+                <a href="https://github.com/gamaelapollon" class="project-link"
+                   target="_blank" rel="noopener">⌥ GitHub</a>
+              </div>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <span class="project-num">04</span>
+            <div class="project-tags">
+              <span class="project-tag">HTML</span>
+              <span class="project-tag">CSS</span>
+              <span class="project-tag">Personnel</span>
+            </div>
+            <h3 class="project-title">CV en ligne interactif</h3>
+            <p class="project-desc">
+              Page web de CV interactive et responsive. Typographie soignée,
+              mise en page structurée, sections animées.
+              Premier projet à caractère personnel.
+            </p>
+            <p class="project-learned">
+              <strong>Ce que j'ai appris :</strong> typographie web,
+              hiérarchie visuelle, importance du détail dans la présentation.
+            </p>
+            <div class="project-footer">
+              <div class="project-links">
+                <a href="https://github.com/gamaelapollon" class="project-link"
+                   target="_blank" rel="noopener">⌥ GitHub</a>
+              </div>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 05b — GITHUB -->
+    <section id="github" aria-labelledby="github-title">
+      <div class="container">
+        <div class="github-header reveal">
+          <div>
+            <span class="label">Open Source</span>
+            <h2 class="github-title" id="github-title">Mon GitHub</h2>
+          </div>
+          <a href="https://github.com/gamaelapollon"
+             target="_blank" rel="noopener"
+             class="github-profile-link">
+            Voir le profil complet ↗
+          </a>
+        </div>
+        <div id="github-repos" aria-live="polite" aria-label="Mes repositories GitHub"></div>
+      </div>
+    </section>
+
+    <!-- 06 — EN COURS -->
+    <section id="learning" aria-labelledby="learning-title">
+      <div class="container">
+
+        <div class="learning-header reveal">
+          <span class="label">En cours</span>
+          <h2 class="learning-title" id="learning-title">Ce que j'apprends maintenant</h2>
+          <p class="learning-subtitle">
+            Un étudiant qui sait où il va est plus précieux qu'un dev qui prétend tout savoir.
+            Voici ce sur quoi je travaille en ce moment.
+          </p>
+        </div>
+
+        <div class="learning-grid reveal reveal-delay-1">
+
+          <div class="learning-card">
+            <span class="learning-status status-active">
+              <span class="status-dot" aria-hidden="true"></span>En cours
+            </span>
+            <h3 class="learning-card-title">Java — Programmation orientée objet</h3>
+            <p class="learning-card-desc">
+              Après le C++, je consolide mes bases en Java — syntaxe,
+              POO avancée, collections, gestion des exceptions.
+            </p>
+            <div class="learning-progress">
+              <div class="learning-progress-label">
+                <span>Progression estimée</span><span>35%</span>
+              </div>
+              <div class="learning-progress-bar">
+                <div class="learning-progress-fill" data-progress="35%" style="width:0"></div>
+              </div>
+            </div>
+            <div class="learning-resources">
+              <span class="resource-tag">OpenClassrooms</span>
+              <span class="resource-tag">YouTube</span>
+              <span class="resource-tag">IntelliJ IDEA</span>
+            </div>
+          </div>
+
+          <div class="learning-card">
+            <span class="learning-status status-active">
+              <span class="status-dot" aria-hidden="true"></span>En cours
+            </span>
+            <h3 class="learning-card-title">React — Développement web moderne</h3>
+            <p class="learning-card-desc">
+              Composants, props, état, hooks — je veux pouvoir construire
+              des interfaces dynamiques et professionnelles.
+            </p>
+            <div class="learning-progress">
+              <div class="learning-progress-label">
+                <span>Progression estimée</span><span>15%</span>
+              </div>
+              <div class="learning-progress-bar">
+                <div class="learning-progress-fill" data-progress="15%" style="width:0"></div>
+              </div>
+            </div>
+            <div class="learning-resources">
+              <span class="resource-tag">React.dev</span>
+              <span class="resource-tag">freeCodeCamp</span>
+              <span class="resource-tag">VS Code</span>
+            </div>
+          </div>
+
+          <div class="learning-card">
+            <span class="learning-status status-next">
+              <span class="status-dot" aria-hidden="true"></span>Prochaine étape
+            </span>
+            <h3 class="learning-card-title">JavaScript — Bases solides</h3>
+            <p class="learning-card-desc">
+              Fonctions, DOM, async/await, fetch API — des bases vraiment
+              solides avant d'aller plus loin avec React.
+            </p>
+            <div class="learning-progress">
+              <div class="learning-progress-label">
+                <span>Progression estimée</span><span>20%</span>
+              </div>
+              <div class="learning-progress-bar">
+                <div class="learning-progress-fill" data-progress="20%" style="width:0"></div>
+              </div>
+            </div>
+            <div class="learning-resources">
+              <span class="resource-tag">javascript.info</span>
+              <span class="resource-tag">MDN Web Docs</span>
+            </div>
+          </div>
+
+          <div class="learning-card">
+            <span class="learning-status status-next">
+              <span class="status-dot" aria-hidden="true"></span>Prochaine étape
+            </span>
+            <h3 class="learning-card-title">Git avancé & GitHub public</h3>
+            <p class="learning-card-desc">
+              Branches, pull requests, workflows. Rendre mon GitHub
+              public avec du code propre et documenté.
+            </p>
+            <div class="learning-progress">
+              <div class="learning-progress-label">
+                <span>Progression estimée</span><span>40%</span>
+              </div>
+              <div class="learning-progress-bar">
+                <div class="learning-progress-fill" data-progress="40%" style="width:0"></div>
+              </div>
+            </div>
+            <div class="learning-resources">
+              <span class="resource-tag">GitHub Docs</span>
+              <span class="resource-tag">Git branching</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="learning-goal reveal reveal-delay-2">
+          <span class="learning-goal-icon" aria-hidden="true">🎯</span>
+          <div class="learning-goal-text">
+            <p class="learning-goal-title">Mon objectif d'ici 6 mois</p>
+            <p class="learning-goal-desc">
+              Avoir un premier projet React fonctionnel en ligne, un GitHub actif
+              avec du code propre, et décrocher ma première mission freelance ou
+              mon premier stage rémunéré — tout en continuant ma licence.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 07 — CONTACT -->
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-inner">
+
+          <div class="reveal">
+            <span class="label">Contact</span>
+            <h2 class="contact-title" id="contact-title">
+              Une opportunité<br>à me <em>proposer ?</em>
+            </h2>
+            <p class="contact-desc">
+              Stage, petite mission freelance, projet collaboratif —
+              je suis preneur. Je réponds à tous les messages sérieux sous 24h.
+            </p>
+
+            <div class="contact-availability" style="margin-bottom:1.5rem">
+              <span class="avail-tag">✦ Stage</span>
+              <span class="avail-tag">✦ Freelance</span>
+              <span class="avail-tag">✦ Remote</span>
+              <span class="avail-tag">✦ Temps partiel</span>
+            </div>
+
+            <div class="contact-info">
+              <div class="contact-info-item" id="copy-email"
+                   role="button" tabindex="0"
+                   aria-label="Cliquer pour copier l'email"
+                   style="cursor:pointer">
+                <div class="contact-info-icon" aria-hidden="true">✉</div>
+                <div>
+                  <p class="contact-info-label">Email</p>
+                  <p class="contact-info-value">apollongamael10@gmail.com</p>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-info-icon" aria-hidden="true">📍</div>
+                <div>
+                  <p class="contact-info-label">Localisation</p>
+                  <p class="contact-info-value">Port-au-Prince, Haïti 🇭🇹 — Remote OK</p>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-info-icon" aria-hidden="true">🕐</div>
+                <div>
+                  <p class="contact-info-label">Heure locale</p>
+                  <p class="contact-time" id="local-time" aria-live="polite">--:--:--</p>
+                </div>
+              </div>
+
+              <a href="https://github.com/Gamael-23"
+                 target="_blank" rel="noopener" class="contact-info-item">
+                <div class="contact-info-icon" aria-hidden="true">⌥</div>
+                <div>
+                  <p class="contact-info-label">GitHub</p>
+                  <p class="contact-info-value">github.com/Gamael-23</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="reveal reveal-delay-2">
+            <form class="contact-form" id="contact-form"
+                  novalidate aria-label="Formulaire de contact">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="form-name">Nom</label>
+                  <input class="form-input" type="text" id="form-name"
+                         name="from_name" placeholder="Jean Dupont"
+                         required autocomplete="name">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="form-email">Email</label>
+                  <input class="form-input" type="email" id="form-email"
+                         name="from_email" placeholder="jean@exemple.com"
+                         required autocomplete="email">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="form-type">Type d'opportunité</label>
+                <select class="form-select" id="form-type" name="subject">
+                  <option value="" disabled selected>Choisir...</option>
+                  <option value="Stage">Stage</option>
+                  <option value="Mission freelance">Mission freelance</option>
+                  <option value="Emploi temps partiel">Emploi temps partiel</option>
+                  <option value="Collaboration / projet">Collaboration / projet</option>
+                  <option value="Autre">Autre</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="form-message">Message</label>
+                <textarea class="form-textarea" id="form-message"
+                          name="message" required
+                          placeholder="Décrivez votre projet ou opportunité..."></textarea>
+              </div>
+
+              <button class="form-submit" type="submit" id="form-submit">
+                Envoyer →
+              </button>
+
+              <div id="form-error"
+                   style="display:none;font-size:var(--text-sm);color:#DC2626;
+                          padding:0.75rem;background:rgba(220,38,38,0.06);
+                          border:1px solid rgba(220,38,38,0.2);
+                          border-radius:var(--radius-sm);text-align:center;
+                          margin-top:0.5rem">
+              </div>
+
+            </form>
+
+            <div class="form-success" id="form-success" role="alert">
+              ✓ Message reçu ! Je vous réponds dans les 24h.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 08 — FOOTER -->
+  <footer id="site-footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-inner">
+        <a href="#hero" class="footer-logo" aria-label="Retour en haut">
+          G<span class="accent">.</span>A
+        </a>
+        <p class="footer-copy">© 2025 Gamael Apollon</p>
+        <div class="footer-right">
+          <a href="#hero" class="back-to-top" aria-label="Retour en haut">↑</a>
+        </div>
+      </div>
+
+      <div class="footer-bar">
+        <nav class="footer-links" aria-label="Liens footer">
+          <a href="#about"    class="footer-link">À propos</a>
+          <a href="#projects" class="footer-link">Projets</a>
+          <a href="#learning" class="footer-link">En cours</a>
+          <a href="#contact"  class="footer-link">Contact</a>
+          <a href="https://github.com/Gamael-23"
+             target="_blank" rel="noopener" class="footer-link">GitHub</a>
+        </nav>
+        <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap">
+          <p class="footer-made">
+            Codé avec <span>♥</span> depuis Port-au-Prince 🇭🇹
+          </p>
+          <p style="font-family:var(--font-mono);font-size:0.62rem;
+                    letter-spacing:0.1em;color:var(--text-faint)">
+            👁 <span id="visitor-count">...</span> visites
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- JS — ordre important -->
+  <script src="js/darkmode.js"></script>
+  <script src="js/loader.js"     defer></script>
+  <script src="js/contact.js"    defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/parallax.js"   defer></script>
+  <script src="js/github.js"     defer></script>
+  <script src="js/counter.js"    defer></script>
+  <script src="js/main.js"       defer></script>
+
+</body>
+</html>
