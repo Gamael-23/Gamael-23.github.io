@@ -119,7 +119,19 @@
         </div>
 
         <div class="hero-avatar-col">
-          <img src="assets/images/avatar-hero.svg" alt="Illustration de Gamael Apollon codant sur son laptop">
+          <div class="hero-terminal" aria-hidden="true">
+            <div class="terminal-bar">
+              <div class="terminal-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <span class="terminal-filename">pharmacie.cpp</span>
+            </div>
+            <div class="terminal-body">
+              <pre id="terminal-code"></pre><span class="terminal-cursor" id="terminal-cursor">▍</span>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -832,6 +844,7 @@
   <script src="js/loader.js"     defer></script>
   <script src="js/contact.js"    defer></script>
   <script src="js/animations.js" defer></script>
+  <script src="js/terminal.js"   defer></script>
   <script src="js/parallax.js"   defer></script>
   <script src="js/github.js"     defer></script>
   <script src="js/counter.js"    defer></script>
