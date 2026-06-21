@@ -228,7 +228,19 @@
   cursor: not-allowed;
 }
 
-/* ── Succès ── */
+/* ── Erreur ── */
+.form-error {
+  display: none;
+  padding: 0.875rem 1.25rem;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: #DC2626;
+  text-align: center;
+}
+
+.form-error.visible { display: block; }
 .form-success {
   display: none;
   padding: 1rem 1.25rem;
@@ -258,4 +270,28 @@
 @media (max-width: 480px) {
   .form-row { grid-template-columns: 1fr; }
   .contact-availability { gap: 0.4rem; }
+
+  .contact-title {
+    font-size: clamp(1.8rem, 9vw, 2.6rem);
+  }
+
+  .contact-info-item {
+    padding: 0.8rem 1rem;
+  }
+
+  .avail-tag {
+    font-size: 0.62rem;
+    padding: 0.3rem 0.65rem;
+  }
+
+  .form-input,
+  .form-textarea,
+  .form-select {
+    font-size: 0.9rem;
+    padding: 0.75rem 0.9rem;
+  }
+
+  .form-submit {
+    padding: 0.85rem 1.5rem;
+  }
 }

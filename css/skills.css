@@ -194,3 +194,31 @@
 
   .skills-subtitle { text-align: left; max-width: 100%; }
 }
+
+@media (max-width: 480px) {
+  .skills-col {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .skill-item {
+    padding: 0.55rem 0;
+  }
+
+  .skill-name {
+    font-size: 0.85rem;
+  }
+
+  .skill-badge {
+    font-size: 0.55rem;
+    padding: 0.15rem 0.45rem;
+  }
+
+  .skills-tools {
+    padding: 1.25rem 1.25rem;
+  }
+
+  .tool-tag {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.6rem;
+  }
+}

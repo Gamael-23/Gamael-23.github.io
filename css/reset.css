@@ -92,3 +92,10 @@ section {
   body { cursor: auto; }
   a, button { cursor: pointer; }
 }
+
+@media (max-width: 480px) {
+  :root {
+    --section-pad-v: 3.5rem;
+    --section-pad-h: 1.1rem;
+  }
+}

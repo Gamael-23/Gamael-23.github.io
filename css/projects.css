@@ -254,3 +254,27 @@
 
   .projects-note { text-align: left; max-width: 100%; }
 }
+
+@media (max-width: 480px) {
+  .project-card {
+    padding: 1.5rem;
+  }
+
+  .project-card--featured .project-meta {
+    padding: 1.5rem;
+  }
+
+  .project-tags {
+    gap: 0.3rem;
+  }
+
+  .project-tag {
+    font-size: 0.58rem;
+    padding: 0.15rem 0.45rem;
+  }
+
+  .project-footer {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}

@@ -223,3 +223,34 @@
     text-align: center;
   }
 }
+
+@media (max-width: 480px) {
+  .learning-card {
+    padding: 1.4rem;
+  }
+
+  .learning-card-title {
+    font-size: 0.98rem;
+  }
+
+  .learning-card-desc {
+    font-size: 0.85rem;
+  }
+
+  .learning-resources {
+    gap: 0.3rem;
+  }
+
+  .resource-tag {
+    font-size: 0.58rem;
+    padding: 0.15rem 0.45rem;
+  }
+
+  .learning-goal {
+    padding: 1.25rem 1.4rem;
+  }
+
+  .learning-goal-icon {
+    font-size: 1.6rem;
+  }
+}
