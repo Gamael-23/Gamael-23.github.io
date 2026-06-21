@@ -31,24 +31,35 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── Burger menu ──
   const burger    = document.getElementById('nav-burger');
   const mobileNav = document.getElementById('nav-mobile');
+  let scrollY = 0;
+
+  function openMenu() {
+    scrollY = window.scrollY;
+    burger.setAttribute('aria-expanded', 'true');
+    mobileNav?.setAttribute('aria-hidden', 'false');
+    mobileNav?.classList.add('open');
+    burger.classList.add('active');
+    document.body.classList.add('menu-open');
+    document.body.style.top = `-${scrollY}px`;
+  }
+
+  function closeMenu() {
+    burger.setAttribute('aria-expanded', 'false');
+    mobileNav?.setAttribute('aria-hidden', 'true');
+    mobileNav?.classList.remove('open');
+    burger.classList.remove('active');
+    document.body.classList.remove('menu-open');
+    document.body.style.top = '';
+    window.scrollTo(0, scrollY);
+  }
 
   burger?.addEventListener('click', () => {
     const isOpen = burger.getAttribute('aria-expanded') === 'true';
-    burger.setAttribute('aria-expanded', String(!isOpen));
-    mobileNav?.setAttribute('aria-hidden', String(isOpen));
-    mobileNav?.classList.toggle('open', !isOpen);
-    burger.classList.toggle('active', !isOpen);
-    document.body.style.overflow = isOpen ? '' : 'hidden';
+    isOpen ? closeMenu() : openMenu();
   });
 
   document.querySelectorAll('.mobile-link').forEach((link) => {
-    link.addEventListener('click', () => {
-      burger?.setAttribute('aria-expanded', 'false');
-      mobileNav?.setAttribute('aria-hidden', 'true');
-      mobileNav?.classList.remove('open');
-      burger?.classList.remove('active');
-      document.body.style.overflow = '';
-    });
+    link.addEventListener('click', closeMenu);
   });
 
   // ── Active nav link ──

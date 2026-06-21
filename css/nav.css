@@ -6,7 +6,7 @@
 #site-header {
   position: fixed;
   top: 0; left: 0; right: 0;
-  z-index: var(--z-nav);
+  z-index: 10000;
   transition: background 0.3s var(--ease), border-color 0.3s;
   border-bottom: 1px solid transparent;
 }
@@ -216,10 +216,8 @@
 .nav-mobile {
   position: fixed;
   inset: 0;
-  z-index: var(--z-nav);
-  background:
-    radial-gradient(circle at 85% 8%, var(--accent-light) 0%, transparent 45%),
-    var(--bg);
+  z-index: 9999;
+  background: var(--bg);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -227,11 +225,22 @@
   clip-path: circle(2% at calc(100% - 30px) 32px);
   transition: clip-path 0.6s cubic-bezier(0.65, 0, 0.35, 1);
   pointer-events: none;
+  overflow-y: auto;
 }
 
 .nav-mobile.open {
   clip-path: circle(150% at calc(100% - 30px) 32px);
   pointer-events: auto;
+}
+
+/* Couche de dégradé décorative séparée — ne casse pas l'opacité du fond */
+.nav-mobile::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 85% 8%, var(--accent-light) 0%, transparent 45%);
+  pointer-events: none;
 }
 
 /* Grille de fond très subtile, cohérente avec le Hero */
@@ -429,4 +438,11 @@
   .mobile-item::after {
     display: none;
   }
+}
+
+/* ── Verrouillage scroll body quand menu ouvert ── */
+body.menu-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
