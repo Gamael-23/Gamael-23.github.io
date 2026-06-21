@@ -9,22 +9,23 @@
   const cursorEl = document.getElementById('terminal-cursor');
   if (!codeEl) return;
 
-  // ── Extrait de code réel — inspiré du projet pharmacie ──
+  // ── Extrait de code réel — apprentissage Java ──
   const lines = [
-    { text: '<span class="tk-com">// Gestion de stock — Pharmacie</span>' },
-    { text: '<span class="tk-kw">class</span> <span class="tk-type">Produit</span> {' },
-    { text: '<span class="tk-type">public</span>:' },
-    { text: '    <span class="tk-type">string</span> nom;' },
-    { text: '    <span class="tk-type">int</span> quantite;' },
-    { text: '    <span class="tk-type">float</span> prix;' },
-    { text: '    <span class="tk-type">bool</span> <span class="tk-fn">estPerime</span>() {' },
-    { text: '        <span class="tk-kw">return</span> quantite == <span class="tk-num">0</span>;' },
-    { text: '    }' },
-    { text: '};' },
+    { text: '<span class="tk-com">// Gamael Apollon — apprentissage Java</span>' },
+    { text: '<span class="tk-kw">public class</span> <span class="tk-type">Etudiant</span> {' },
+    { text: '    <span class="tk-type">private</span> <span class="tk-type">String</span> nom;' },
+    { text: '    <span class="tk-type">private</span> <span class="tk-type">int</span> anneeEtude;' },
     { text: '' },
-    { text: '<span class="tk-type">void</span> <span class="tk-fn">verifierStock</span>(<span class="tk-type">Produit</span>& p) {' },
-    { text: '    <span class="tk-kw">if</span> (p.<span class="tk-fn">estPerime</span>()) {' },
-    { text: '        <span class="tk-fn">alerter</span>(<span class="tk-str">"Stock vide !"</span>);' },
+    { text: '    <span class="tk-type">public</span> <span class="tk-fn">Etudiant</span>(<span class="tk-type">String</span> nom, <span class="tk-type">int</span> annee) {' },
+    { text: '        <span class="tk-kw">this</span>.nom = nom;' },
+    { text: '        <span class="tk-kw">this</span>.anneeEtude = annee;' },
+    { text: '    }' },
+    { text: '' },
+    { text: '    <span class="tk-type">public void</span> <span class="tk-fn">afficherProgres</span>() {' },
+    { text: '        System.<span class="tk-fn">out</span>.<span class="tk-fn">println</span>(' },
+    { text: '            nom + <span class="tk-str">" apprend depuis "</span>' },
+    { text: '            + anneeEtude + <span class="tk-str">" ans."</span>' },
+    { text: '        );' },
     { text: '    }' },
     { text: '}' },
   ];
