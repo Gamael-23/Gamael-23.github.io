@@ -171,6 +171,7 @@
 .nav-burger {
   display: none;
   position: relative;
+  z-index: 10001;
   flex-direction: column;
   justify-content: center;
   align-items: center;

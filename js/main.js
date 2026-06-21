@@ -62,6 +62,32 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', closeMenu);
   });
 
+  // ── Fermer avec la touche Échap ──
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && burger?.getAttribute('aria-expanded') === 'true') {
+      closeMenu();
+    }
+  });
+
+  // ── Fermer en cliquant sur le fond (hors liens) ──
+  mobileNav?.addEventListener('click', (e) => {
+    if (e.target === mobileNav) closeMenu();
+  });
+
+  // ── Fermer avec le bouton "retour" du navigateur/mobile ──
+  burger?.addEventListener('click', () => {
+    const isOpen = burger.getAttribute('aria-expanded') === 'true';
+    if (isOpen) {
+      history.pushState({ menuOpen: true }, '');
+    }
+  });
+
+  window.addEventListener('popstate', () => {
+    if (burger?.getAttribute('aria-expanded') === 'true') {
+      closeMenu();
+    }
+  });
+
   // ── Active nav link ──
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
