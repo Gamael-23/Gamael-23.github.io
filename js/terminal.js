@@ -1,7 +1,4 @@
-/* ============================================
-   TERMINAL ANIMÉ — GAMAEL APOLLON
-   Tape du vrai code C++ caractère par caractère
-   ============================================ */
+
 
 (function () {
 
@@ -9,7 +6,7 @@
   const cursorEl = document.getElementById('terminal-cursor');
   if (!codeEl) return;
 
-  // ── Extrait de code réel — apprentissage Java ──
+
   const lines = [
     { text: '<span class="tk-com">// Gamael Apollon — apprentissage Java</span>' },
     { text: '<span class="tk-kw">public class</span> <span class="tk-type">Etudiant</span> {' },
@@ -36,7 +33,7 @@
 
   function typeNextChar() {
     if (lineIndex >= lines.length) {
-      // Pause puis reset pour boucler
+      
       setTimeout(() => {
         currentHTML = [];
         lineIndex = 0;
@@ -54,8 +51,7 @@
       currentHTML.push('');
     }
 
-    // On affiche la ligne en HTML complet d'un coup pour préserver les balises,
-    // mais on simule l'effet "typing" via un compteur de caractères visibles
+
     charIndex++;
 
     const revealed = revealPartialHTML(line.text, charIndex);
@@ -72,7 +68,6 @@
     }
   }
 
-  // Révèle progressivement le texte en ignorant les balises HTML pour le compte de caractères
   function revealPartialHTML(html, visibleChars) {
     let result   = '';
     let visible  = 0;
@@ -94,7 +89,7 @@
     return result;
   }
 
-  // Démarre après l'apparition du terminal (synchronisé avec l'animation CSS)
+ 
   setTimeout(typeNextChar, 900);
 
 })();

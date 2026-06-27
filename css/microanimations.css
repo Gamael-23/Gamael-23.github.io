@@ -266,3 +266,79 @@
     transform var(--duration-xslow) var(--ease-out);
 }
 .reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+/* ══════════════════════════════════════════
+   12. ICÔNES SVG — remplacement des emojis
+══════════════════════════════════════════ */
+
+/* Toutes les icônes SVG héritent la couleur du texte parent */
+.theme-toggle-icon svg,
+.contact-info-icon svg,
+.learning-goal-icon svg,
+.mobile-footer-link svg {
+  display: block;
+  color: currentColor;
+}
+
+.theme-toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-info-icon {
+  color: var(--text-muted);
+}
+
+.contact-info-item:hover .contact-info-icon {
+  color: var(--accent);
+}
+
+.learning-goal-icon {
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-footer-link {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.mobile-footer-link svg {
+  flex-shrink: 0;
+}
+
+/* Étoile dans les avail-tags */
+.avail-icon {
+  flex-shrink: 0;
+  margin-right: 0.3rem;
+  vertical-align: -1px;
+}
+
+.avail-tag {
+  display: inline-flex !important;
+  align-items: center;
+}
+
+/* Checkmark succès formulaire */
+.success-icon {
+  flex-shrink: 0;
+  vertical-align: -3px;
+  margin-right: 0.4rem;
+  color: #15803D;
+}
+
+/* Coeur footer */
+.heart-icon {
+  display: inline-flex;
+  vertical-align: -1px;
+  color: var(--accent);
+  margin: 0 0.15rem;
+}
+
+.heart-icon svg {
+  display: block;
+}
