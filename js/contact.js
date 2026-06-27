@@ -6,34 +6,19 @@
 (function () {
 
   /* ══════════════════════════════════════
-     CONFIGURATION EMAILJS
-     À remplir avec tes vraies clés :
-
-     1. Va sur https://www.emailjs.com
-     2. Crée un compte gratuit
-     3. Add Service → Gmail → copie le Service ID
-     4. Email Templates → crée un template → copie le Template ID
-     5. Account → API Keys → copie la Public Key
-
-     Le template EmailJS doit contenir :
-     {{from_name}}   — nom de l'expéditeur
-     {{from_email}}  — email de l'expéditeur
-     {{subject}}     — type d'opportunité
-     {{message}}     — message
-     {{to_name}}     — "Gamael" (fixe)
+     CONFIGURATION EMAILJS — clés actives
   ══════════════════════════════════════ */
-  const EMAILJS_PUBLIC_KEY  = 'TA_PUBLIC_KEY';
-  const EMAILJS_SERVICE_ID  = 'TA_SERVICE_ID';
-  const EMAILJS_TEMPLATE_ID = 'TON_TEMPLATE_ID';
+  const EMAILJS_PUBLIC_KEY  = '0tb6iDYzhdvgpm9Yr';
+  const EMAILJS_SERVICE_ID  = 'service_sqed76o';
+  const EMAILJS_TEMPLATE_ID = 'template_qxbvzbo';
 
-  // Initialiser EmailJS
+  // Initialiser EmailJS dès que possible
   if (typeof emailjs !== 'undefined') {
     emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
   }
 
   // ── Heure locale Haïti ──
   const timeEl = document.getElementById('local-time');
-
   function updateTime() {
     if (!timeEl) return;
     timeEl.textContent = new Date().toLocaleTimeString('fr-FR', {
@@ -41,16 +26,14 @@
       hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false,
     }) + ' (HAT)';
   }
-
   updateTime();
   setInterval(updateTime, 1000);
 
-  // ── Copier email ──
+  // ── Copier email au clic ──
   const emailItem = document.getElementById('copy-email');
   emailItem?.addEventListener('click', () => {
     navigator.clipboard.writeText('gamaelapollon@example.com').then(() => {
       const val = emailItem.querySelector('.contact-info-value');
-      if (!val) return;
       const original = val.textContent;
       val.textContent = '✓ Copié !';
       val.style.color = 'var(--accent)';
@@ -58,11 +41,11 @@
     });
   });
 
-  // ── Formulaire ──
+  // ── Formulaire EmailJS ──
   const form      = document.getElementById('contact-form');
   const success   = document.getElementById('form-success');
-  const errorMsg  = document.getElementById('form-error');
   const submitBtn = document.getElementById('form-submit');
+  const errorMsg  = document.getElementById('form-error');
 
   if (!form) return;
 
@@ -73,9 +56,16 @@
     const email   = form.querySelector('#form-email')?.value.trim();
     const message = form.querySelector('#form-message')?.value.trim();
 
-    if (!name || !email || !message) { showError('Merci de remplir tous les champs.'); return; }
-    if (!isValidEmail(email))        { showError('Adresse email invalide.');            return; }
+    if (!name || !email || !message) {
+      showError('Merci de remplir tous les champs.');
+      return;
+    }
+    if (!isValidEmail(email)) {
+      showError('Adresse email invalide.');
+      return;
+    }
 
+    if (errorMsg) errorMsg.style.display = 'none';
     setLoading(true);
 
     try {
@@ -88,16 +78,8 @@
 
     } catch (err) {
       console.error('EmailJS error:', err);
-
-      // Mode démo si clés pas encore configurées
-      if (EMAILJS_PUBLIC_KEY === 'TA_PUBLIC_KEY') {
-        await new Promise(r => setTimeout(r, 1000));
-        form.style.display = 'none';
-        if (success) success.classList.add('visible');
-      } else {
-        showError("Erreur d'envoi. Contacte-moi directement par email.");
-        setLoading(false);
-      }
+      showError("Erreur d'envoi. Contacte-moi directement par email.");
+      setLoading(false);
     }
   });
 
@@ -110,8 +92,8 @@
   function showError(msg) {
     if (!errorMsg) return;
     errorMsg.textContent = msg;
-    errorMsg.classList.add('visible');
-    setTimeout(() => errorMsg.classList.remove('visible'), 4000);
+    errorMsg.style.display = 'block';
+    setTimeout(() => { errorMsg.style.display = 'none'; }, 4000);
   }
 
   function isValidEmail(email) {
