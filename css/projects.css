@@ -1,13 +1,11 @@
-/* ============================================
-   PROJECTS — GAMAEL APOLLON
-   ============================================ */
+ 
 
 #projects {
   background: var(--bg-2);
   border-top: 1px solid var(--border);
 }
 
-/* ── En-tête ── */
+ 
 .projects-header {
   display: flex;
   align-items: flex-end;
@@ -33,7 +31,7 @@
   line-height: 1.6;
 }
 
-/* ── Grille ── */
+ 
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -44,7 +42,7 @@
   overflow: hidden;
 }
 
-/* ── Card de base ── */
+ 
 .project-card {
   background: var(--bg-card);
   padding: 2.25rem;
@@ -58,7 +56,7 @@
 
 .project-card:hover { background: var(--bg); }
 
-/* Ligne bleue top au hover */
+ 
 .project-card::before {
   content: '';
   position: absolute;
@@ -72,7 +70,7 @@
 
 .project-card:hover::before { transform: scaleX(1); }
 
-/* ── Featured — pleine largeur ── */
+ 
 .project-card--featured {
   grid-column: span 2;
   display: grid;
@@ -132,7 +130,7 @@
   transform: scaleX(1);
 }
 
-/* ── Numéro ── */
+ 
 .project-num {
   font-family: var(--font-mono);
   font-size: 0.62rem;
@@ -141,7 +139,7 @@
   color: var(--text-faint);
 }
 
-/* ── Tags ── */
+ 
 .project-tags {
   display: flex;
   flex-wrap: wrap;
@@ -159,8 +157,7 @@
   padding: 0.18rem 0.55rem;
   border-radius: var(--radius-sm);
 }
-
-/* ── Titre projet ── */
+ 
 .project-title {
   font-family: var(--font-display);
   font-size: clamp(1.1rem, 2vw, 1.4rem);
@@ -170,7 +167,7 @@
   color: var(--text);
 }
 
-/* ── Description ── */
+ 
 .project-desc {
   font-size: var(--text-sm);
   color: var(--text-muted);
@@ -178,7 +175,7 @@
   flex: 1;
 }
 
-/* ── Ce que j'ai appris ── */
+ 
 .project-learned {
   font-size: 0.8rem;
   color: var(--text-muted);
@@ -194,7 +191,7 @@
   font-weight: 400;
 }
 
-/* ── Footer card ── */
+ 
 .project-footer {
   display: flex;
   align-items: center;

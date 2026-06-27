@@ -1,23 +1,17 @@
-/* ============================================
-   CONTACT JS — GAMAEL APOLLON
-   EmailJS + heure locale Haïti + copie email
-   ============================================ */
+ 
 
 (function () {
-
-  /* ══════════════════════════════════════
-     CONFIGURATION EMAILJS — clés actives
-  ══════════════════════════════════════ */
+ 
   const EMAILJS_PUBLIC_KEY  = '0tb6iDYzhdvgpm9Yr';
   const EMAILJS_SERVICE_ID  = 'service_sqed76o';
   const EMAILJS_TEMPLATE_ID = 'template_qxbvzbo';
 
-  // Initialiser EmailJS dès que possible
+   
   if (typeof emailjs !== 'undefined') {
     emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
   }
 
-  // ── Heure locale Haïti ──
+   
   const timeEl = document.getElementById('local-time');
   function updateTime() {
     if (!timeEl) return;
@@ -29,7 +23,7 @@
   updateTime();
   setInterval(updateTime, 1000);
 
-  // ── Copier email au clic ──
+  
   const emailItem = document.getElementById('copy-email');
   emailItem?.addEventListener('click', () => {
     navigator.clipboard.writeText('gamaelapollon@example.com').then(() => {
@@ -41,7 +35,7 @@
     });
   });
 
-  // ── Formulaire EmailJS ──
+  
   const form      = document.getElementById('contact-form');
   const success   = document.getElementById('form-success');
   const submitBtn = document.getElementById('form-submit');

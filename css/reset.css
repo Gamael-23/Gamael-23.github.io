@@ -1,6 +1,4 @@
-/* ============================================
-   GAMAEL APOLLON — RESET & BASE
-   ============================================ */
+ 
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -41,7 +39,7 @@ ul, ol { list-style: none; }
 button { font-family: inherit; border: none; background: none; }
 input, textarea, select { font-family: inherit; }
 
-/* ── Layout ── */
+ 
 .container {
   width: 100%;
   max-width: var(--max-width);
@@ -53,7 +51,7 @@ section {
   padding-block: var(--section-pad-v);
 }
 
-/* ── Utilitaires ── */
+ 
 .sr-only {
   position: absolute; width: 1px; height: 1px;
   overflow: hidden; clip: rect(0,0,0,0);
@@ -67,23 +65,22 @@ section {
   text-transform: uppercase;
   color: var(--accent);
 }
-
-/* ── Scrollbar ── */
+ 
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--border-hover); border-radius: 2px; }
 
-/* ── Sélection ── */
+ 
 ::selection { background: var(--accent-dim); color: var(--accent); }
 
-/* ── Focus ── */
+ 
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: var(--radius-sm);
 }
 
-/* ── Responsive ── */
+ 
 @media (max-width: 768px) {
   :root {
     --section-pad-v: 4.5rem;

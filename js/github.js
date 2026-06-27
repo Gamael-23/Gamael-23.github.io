@@ -1,7 +1,4 @@
-/* ============================================
-   GITHUB API — GAMAEL APOLLON
-   Affiche tes repos publics automatiquement
-   ============================================ */
+ 
 
 (function () {
 
@@ -9,7 +6,7 @@
   const container = document.getElementById('github-repos');
   if (!container) return;
 
-  // ── Skeleton loader pendant le fetch ──
+ 
   container.innerHTML = Array(3).fill(`
     <div class="github-card github-skeleton">
       <div class="skeleton-line skeleton-title"></div>
@@ -18,14 +15,14 @@
     </div>
   `).join('');
 
-  // ── Fetch les repos ──
+ 
   fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=6`)
     .then(res => {
       if (!res.ok) throw new Error('GitHub API error');
       return res.json();
     })
     .then(repos => {
-      // Filtrer les forks, garder les vrais projets
+       
       const filtered = repos
         .filter(r => !r.fork && r.name !== GITHUB_USERNAME)
         .slice(0, 4);
@@ -67,7 +64,7 @@
         </a>
       `).join('');
 
-      // Réobserver les nouveaux éléments pour le scroll reveal
+      
       document.querySelectorAll('.github-card.reveal').forEach(el => {
         el.classList.remove('visible');
         setTimeout(() => el.classList.add('visible'), 100);
@@ -83,8 +80,7 @@
         </p>`;
     });
 
-
-  // ── Formater la date ──
+ 
   function formatDate(isoString) {
     const date = new Date(isoString);
     const now  = new Date();

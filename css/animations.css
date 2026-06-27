@@ -1,6 +1,4 @@
-/* ============================================
-   GAMAEL APOLLON — ANIMATIONS
-   ============================================ */
+
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }

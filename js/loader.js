@@ -1,6 +1,4 @@
-/* ============================================
-   LOADER JS — GAMAEL APOLLON
-   ============================================ */
+ 
 
 (function () {
   const loader  = document.getElementById('loader');

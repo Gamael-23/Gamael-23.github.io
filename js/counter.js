@@ -1,23 +1,20 @@
-/* ============================================
-   COMPTEUR DE VISITEURS — GAMAEL APOLLON
-   Via api.counterapi.dev — gratuit, sans compte
-   ============================================ */
+ /
 
 (function () {
 
   const counterEl = document.getElementById('visitor-count');
   if (!counterEl) return;
 
-  // Incrémenter + récupérer le compteur
+   
   fetch('https://api.counterapi.dev/v1/gamaelapollon-portfolio/visits/up')
     .then(res => res.json())
     .then(data => {
       const count = data.count || 0;
-      // Animation du nombre
+       
       animateCount(counterEl, count);
     })
     .catch(() => {
-      // Silencieux si l'API est down
+      
       counterEl.textContent = '—';
     });
 

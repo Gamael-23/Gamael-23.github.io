@@ -1,10 +1,8 @@
-/* ============================================
-   GAMAEL APOLLON — MAIN JS
-   ============================================ */
+ 
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ── Scroll Reveal ──
+ 
   const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -17,18 +15,17 @@ document.addEventListener('DOMContentLoaded', () => {
     { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
   );
 
-  // Observer toutes les classes reveal
+  
   document.querySelectorAll(
     '.reveal, .reveal-left, .reveal-right, .reveal-scale, .skills-col'
   ).forEach((el) => revealObserver.observe(el));
-
-  // ── Nav scroll ──
+ 
   const header = document.getElementById('site-header');
   window.addEventListener('scroll', () => {
     header?.classList.toggle('scrolled', window.scrollY > 60);
   });
 
-  // ── Burger menu ──
+ 
   const burger    = document.getElementById('nav-burger');
   const mobileNav = document.getElementById('nav-mobile');
   let scrollY = 0;
@@ -62,19 +59,19 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', closeMenu);
   });
 
-  // ── Fermer avec la touche Échap ──
+ 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && burger?.getAttribute('aria-expanded') === 'true') {
       closeMenu();
     }
   });
 
-  // ── Fermer en cliquant sur le fond (hors liens) ──
+  
   mobileNav?.addEventListener('click', (e) => {
     if (e.target === mobileNav) closeMenu();
   });
 
-  // ── Fermer avec le bouton "retour" du navigateur/mobile ──
+  
   burger?.addEventListener('click', () => {
     const isOpen = burger.getAttribute('aria-expanded') === 'true';
     if (isOpen) {
@@ -88,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ── Active nav link ──
+ 
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
   const activeObserver = new IntersectionObserver(

@@ -1,11 +1,8 @@
-/* ============================================
-   ANIMATIONS JS — GAMAEL APOLLON
-   Typing effect, compteurs, progress bars, tilt
-   ============================================ */
+ 
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ── 1. TYPING EFFECT sur le badge Hero ──────
+ 
   const badgeSpan = document.querySelector('.hero-badge-text');
   if (badgeSpan) {
     const text = badgeSpan.getAttribute('data-text') || badgeSpan.textContent;
@@ -22,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  // ── 2. COMPTEURS ANIMÉS dans About ──────────
+  
   const statItems = document.querySelectorAll('.stat-item');
 
   const counterObserver = new IntersectionObserver((entries) => {
@@ -58,8 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   statItems.forEach(el => counterObserver.observe(el));
 
-
-  // ── 3. BARRES DE PROGRESSION dans Learning ──
+ 
   const progressFills = document.querySelectorAll('.learning-progress-fill');
 
   const progressObserver = new IntersectionObserver((entries) => {
@@ -75,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
   progressFills.forEach(el => progressObserver.observe(el));
 
 
-  // ── 4. TILT 3D sur les project cards ────────
+  
   const cards = document.querySelectorAll(
     '.project-card:not(.project-card--featured)'
   );
@@ -99,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  // ── 5. SCROLL indicator disparaît ───────────
+   
   const scrollHint = document.querySelector('.hero-scroll');
   if (scrollHint) {
     window.addEventListener('scroll', () => {
